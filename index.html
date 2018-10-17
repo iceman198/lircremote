@@ -1,6 +1,23 @@
 <html>
 <head>
     <title>Universal Remote Server</title>
+    <style type="text/css">
+        body { 
+
+        }
+        table { 
+            width: 100%;
+            height: 160px;
+        }
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        button {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -18,8 +35,8 @@
 <body>
     <table border=1 style="width:100%;height:160px;">
         <tr>
-            <td align=center><button onclick="sendCmd('KEY_POWER')">Power</button></td>
-            <td><button style="width:100%;" onclick="sendCmd('KEY_VOLUMEUP')">Vol +</button></td>
+            <td><button onclick="sendCmd('KEY_POWER')">Power</button></td>
+            <td><button onclick="sendCmd('KEY_VOLUMEUP')">Vol +</button></td>
             <td><button onclick="sendCmd('KEY_CHANNELUP')">Ch+</button></td>
         </tr>
         <tr>
