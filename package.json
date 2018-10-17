@@ -1,0 +1,26 @@
+{
+  "name": "lircremote",
+  "version": "1.0.0",
+  "description": "A LIRC server for your Raspberry Pi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iceman198/lircremote.git"
+  },
+  "keywords": [
+    "LIRC",
+    "Raspberry",
+    "Pi",
+    "nodejs",
+    "express"
+  ],
+  "author": "Sean Dutton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iceman198/lircremote/issues"
+  },
+  "homepage": "https://github.com/iceman198/lircremote#readme"
+}

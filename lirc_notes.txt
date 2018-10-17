@@ -1,0 +1,10 @@
+#to kill all lircd
+  $sudo killall lircd
+
+#then start the right device
+  $sudo lircd -d /dev/lirc0
+
+#Should be good after that!
+  $irsend list samsungtv ""
+  $irsend SEND_ONCE samsungtv KEY_POWER
+
