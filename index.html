@@ -7,9 +7,9 @@
     var url = "http://stdlirc:8080/service/?remote=samsungtv&key=";
     function sendCmd(cmd) {
         $.get(url & cmd, function (response) {
-            console(response);
+            console.log(response);
         }).error(function () {
-            console("error with web call");
+            console.log("error with web call");
         });
     }
 </script>
