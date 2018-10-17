@@ -5,6 +5,9 @@
   $sudo lircd -d /dev/lirc0
 
 #Should be good after that!
+#here are some test send commands to see if it works
+#   'samsungtv' is what you named your remote when you did the 'irrecord' session
+#   'KEY_POWER' is one of the namespaces or names you gave the command during that same record session
   $irsend list samsungtv ""
   $irsend SEND_ONCE samsungtv KEY_POWER
 
