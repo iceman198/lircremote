@@ -4,6 +4,8 @@ A server for your LIRC setup on a Raspberry Pi
 ## Instructions
 Here is the instructables I used for the initial setup of LIRC and such: https://www.hackster.io/austin-stanton/creating-a-raspberry-pi-universal-remote-with-lirc-2fd581
 
+### Full transparency
+I found this guy has already done something similar (https://github.com/bbtinkerer/LircNodeJsWeb), but just wanted to make my own.
 
 ## Troubleshooting
 In all of this, the key thing is to make sure your remote file that gets created during the 'irrecord' process looks something like one of the files in the 'remote' folder here.  If there aren't many lines of numbers, then something didn't go right and you should delete it and try again.
