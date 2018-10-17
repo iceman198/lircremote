@@ -6,7 +6,7 @@
 <script>
     function sendPower() {
         var data = "hello";
-        $.get("http://stdlirc/service/?remote=samsungtv&key=KEY_POWER", function (response) {
+        $.get("http://stdlirc:8080/service/?remote=samsungtv&key=KEY_POWER", function (response) {
             data = response;
         }).error(function () {
             console("error with web call");
