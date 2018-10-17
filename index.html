@@ -6,7 +6,7 @@
 <script  type="text/javascript">
     var url = "http://stdlirc:8080/service/?remote=samsungtv&key=";
     function sendCmd(cmd) {
-        var myurl = url & cmd;
+        var myurl = url + cmd;
         $.get(myurl, function (response) {
             console.log(response);
         }).error(function () {
