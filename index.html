@@ -1,18 +1,39 @@
 <html>
-    <head>
 
-    </head>
-    <body>
-        <table border=1>
-            <tr>
-                <td>Power</td><td>Vol+</td><td>Ch+</td>
-            </tr>
-            <tr>
-                <td>Mute</td><td>Vol-</td><td>Ch-</td>
-            </tr>
-            <tr>
-                <td>Input</td><td></td><td></td>
-            </tr>
-        </table>
-    </body>
+<head>
+
+</head>
+<script>
+    function sendPower() {
+        var data = "hello";
+        $.get("http://stdlirc/service/?remote=samsungtv&key=KEY_POWER", function (response) {
+            data = response;
+        }).error(function () {
+            console("error with web call");
+        });
+
+        return data;
+    }
+</script>
+
+<body>
+    <table border=1>
+        <tr>
+            <td><button onclick="sendPower">Power</button></td>
+            <td>Vol+</td>
+            <td>Ch+</td>
+        </tr>
+        <tr>
+            <td>Mute</td>
+            <td>Vol-</td>
+            <td>Ch-</td>
+        </tr>
+        <tr>
+            <td>Input</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
 </html>
