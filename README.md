@@ -21,3 +21,6 @@ killall lircd
 #then start the right device
 lircd -d /dev/lirc0
 ```
+
+### Next Steps
+Going to enhance the nodejs express server to give a web page and read form a json config of the buttons!
