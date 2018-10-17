@@ -4,22 +4,20 @@
 </head>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script  type="text/javascript">
-    function sendPower() {
-        var data = "hello";
-        $.get("http://stdlirc:8080/service/?remote=samsungtv&key=KEY_POWER", function (response) {
-            data = response;
+    var url = "http://stdlirc:8080/service/?remote=samsungtv&key=";
+    function sendCmd(cmd) {
+        $.get(url & cmd, function (response) {
+            console(response);
         }).error(function () {
             console("error with web call");
         });
-
-        return data;
     }
 </script>
 <body>
     <table border=1>
         <tr>
-            <td><button onclick="sendPower()">Power</button></td>
-            <td>Vol+</td>
+            <td><button onclick="sendPower('KEY_POWER')">Power</button></td>
+            <td><button onclick="sendPower('KEY_VOLUMEUP')">Vol +</button></td>
             <td>Ch+</td>
         </tr>
         <tr>
