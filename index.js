@@ -5,7 +5,12 @@ const express = require('express');
 const app = express();
 const port = 8080
 
-app.get('/', (request, response) => {
+app.use(express.static('public'));
+app.get('/index.htm', function (req, res) {
+   res.sendFile( __dirname + "/" + "index.html" );
+})
+
+app.get('/service/', (request, response) => {
   //var url_parts = url.parse(request.url, true);
   //var query = url_parts.query;
   var key = request.query.key;
