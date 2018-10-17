@@ -3,7 +3,7 @@
     <title>Universal Remote Server</title>
 </head>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script>
+<script  type="text/javascript">
     function sendPower() {
         var data = "hello";
         $.get("http://stdlirc:8080/service/?remote=samsungtv&key=KEY_POWER", function (response) {
