@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/iceman198/lircremote/issues"
   },
-  "homepage": "https://github.com/iceman198/lircremote#readme"
+  "homepage": "https://github.com/iceman198/lircremote#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
