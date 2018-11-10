@@ -23,8 +23,17 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script  type="text/javascript">
     var url = "http://stdlirc:8080/service/?remote=samsungtv&key=";
+    var url2 = "http://stdlirc:8080/service/?remote=mag_dvd&key=";
     function sendCmd(cmd) {
         var myurl = url + cmd;
+        $.get(myurl, function (response) {
+            console.log(response);
+        }).error(function () {
+            console.log("error with web call");
+        });
+    }
+    function sendDvdCmd(cmd) {
+        var myurl = url2 + cmd;
         $.get(myurl, function (response) {
             console.log(response);
         }).error(function () {
@@ -63,6 +72,44 @@
             <td></td>
             <td></td>
             <td></td>
+        </tr>
+    </table>
+    <hr>
+    <table border=1>
+        <tr>
+            <td></td>
+            <td><button onclick="sendDvdCmd('KEY_POWER')">Power</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><button onclick="sendDvdCmd('KEY_PLAY')">Play</button></td>
+            <td><button onclick="sendDvdCmd('KEY_STOP')">Stop</button></td>
+            <td><button onclick="sendDvdCmd('KEY_MENU')">Menu</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="sendDvdCmd('KEY_UP')">Up</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><button onclick="sendDvdCmd('KEY_LEFT')">Left</button></td>
+            <td><button onclick="sendDvdCmd('KEY_ENTER')">Enter</button></td>
+            <td><button onclick="sendDvdCmd('KEY_RIGHT')">Right</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="sendDvdCmd('KEY_DOWN')">Down</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><button onclick="sendDvdCmd('KEY_TITLE')">Title</button></td>
+            <td><button onclick="sendDvdCmd('KEY_DISPLAY')">Display</button></td>
+            <td><button onclick="sendDvdCmd('KEY_OPEN')">Open</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="sendDvdCmd('KEY_PREVIOUS')">Previous</button></td>
+            <td><button onclick="sendDvdCmd('KEY_STEP')">Step</button></td>
+            <td><button onclick="sendDvdCmd('KEY_NEXT')">Next</button></td>
         </tr>
     </table>
 </body>
