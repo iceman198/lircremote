@@ -24,6 +24,16 @@
 <script  type="text/javascript">
     var url = "http://stdlirc:8080/service/?remote=samsungtv&key=";
     var url2 = "http://stdlirc:8080/service/?remote=mag_dvd&key=";
+    var url_cmd = "http://stdlirc:8080/service/?key=";
+
+    function sendCustomCmd(cmd) {
+        var myurl = url_cmd + cmd;
+        $.get(myurl, function (response) {
+            console.log(response);
+        }).error(function () {
+            console.log("error with web call");
+        });
+    }
     function sendCmd(cmd) {
         var myurl = url + cmd;
         $.get(myurl, function (response) {
@@ -111,6 +121,10 @@
             <td><button onclick="sendDvdCmd('KEY_STEP')">Step</button></td>
             <td><button onclick="sendDvdCmd('KEY_NEXT')">Next</button></td>
         </tr>
+    </table>
+    <hr>
+    <table>
+        <tr><td><button onclick="sendCustomCmd('SHUTDOWN')">SHUTDOWN</button></td></tr>
     </table>
 </body>
 </html>

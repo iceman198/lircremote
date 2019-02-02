@@ -17,6 +17,21 @@ app.get('/service/', (request, response) => {
   var remote = request.query.remote;
   console.log(`Key is ${key}`);
   console.log(`Remote is ${remote}`);
+  if (key && !remote) {
+    if (key == "SHUTDOWN") {
+      console.log('performing shutdown');
+      dir = exec(`shutdown now`, function(err, stdout, stderr) {
+        if (err) {
+          console.log('error during shutdown: ', err);
+        }
+        console.log(stdout);
+      });
+  
+      dir.on('exit', function (code) {
+        console.log('exit complete with code ', code);
+      });
+    }
+  }
   if (key && remote) {
     console.log('sending command');
     dir = exec(`irsend SEND_ONCE ${remote} ${key}`, function(err, stdout, stderr) {
