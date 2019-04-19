@@ -36,10 +36,10 @@
         var myurl = url + cmd;
         if (cmd.indexOf('VOLUME') > -1) {
             setTimeout(makeWebCall(myurl), 0);
-            setTimeout(makeWebCall(myurl), 1000);
-            setTimeout(makeWebCall(myurl), 2000);
+            setTimeout(makeWebCall(myurl), 1500);
             setTimeout(makeWebCall(myurl), 3000);
-            setTimeout(makeWebCall(myurl), 4000);
+            setTimeout(makeWebCall(myurl), 4500);
+            setTimeout(makeWebCall(myurl), 6000);
         } else {
             makeWebCall(myurl);
         }
