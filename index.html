@@ -1,18 +1,20 @@
 <html>
+
 <head>
     <title>Universal Remote Server</title>
     <style type="text/css">
-        body { 
+        body {}
 
-        }
-        table { 
+        table {
             width: 100%;
         }
+
         td {
             text-align: center;
             vertical-align: middle;
             height: 60px;
         }
+
         button {
             width: 100%;
             height: 100%;
@@ -21,36 +23,41 @@
 </head>
 <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script  type="text/javascript">
+<script type="text/javascript">
     var url = "http://stdlirc:8080/service/?remote=samsungtv&key=";
     var url2 = "http://stdlirc:8080/service/?remote=mag_dvd&key=";
     var url_cmd = "http://stdlirc:8080/service/?key=";
 
     function sendCustomCmd(cmd) {
         var myurl = url_cmd + cmd;
-        $.get(myurl, function (response) {
-            console.log(response);
-        }).error(function () {
-            console.log("error with web call");
-        });
+        makeWebCall(myurl);
     }
     function sendCmd(cmd) {
         var myurl = url + cmd;
-        $.get(myurl, function (response) {
-            console.log(response);
-        }).error(function () {
-            console.log("error with web call");
-        });
+        if (cmd.indexOf('VOLUME') > -1) {
+            setTimeout(makeWebCall(myurl), 0);
+            setTimeout(makeWebCall(myurl), 1000);
+            setTimeout(makeWebCall(myurl), 2000);
+            setTimeout(makeWebCall(myurl), 3000);
+            setTimeout(makeWebCall(myurl), 4000);
+        } else {
+            makeWebCall(myurl);
+        }
     }
     function sendDvdCmd(cmd) {
         var myurl = url2 + cmd;
-        $.get(myurl, function (response) {
+        makeWebCall(myurl);
+    }
+
+    function makeWebCall(murl) {
+        $.get(murl, function (response) {
             console.log(response);
         }).error(function () {
             console.log("error with web call");
         });
     }
 </script>
+
 <body>
     <table border=1>
         <tr>
@@ -124,7 +131,10 @@
     </table>
     <hr>
     <table>
-        <tr><td><button onclick="sendCustomCmd('SHUTDOWN')">SHUTDOWN</button></td></tr>
+        <tr>
+            <td><button onclick="sendCustomCmd('SHUTDOWN')">SHUTDOWN</button></td>
+        </tr>
     </table>
 </body>
+
 </html>
